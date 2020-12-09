@@ -6,13 +6,15 @@ import time
 import apscheduler.schedulers.blocking
 
 """"
-PowerBI提供API创建流数据集的方法，定义流数据名称和数据类型后生成url，使用POST方法推送即可
+PowerBI提供API创建流数据集的方法
+实质就是通过POST请求发送数据到指定数据集的url
 
-如：在PowerBI中创建时间和销售额两个数据，数据类型为日期时间和数字
-URL:
+定义新的流数据集
+字段； 时间和销售额   数据类型 日期时间和数字
+
+生成url如下：
 "https://api.powerbi.com/beta/564e70f4-345d-481f-9a36-a953dc5fb1fc/datasets/921872a4-0cd3-4dee-9113-64ab72c69bbe/rows?key=kmG32rctsiEwu6sY73yLNJnrMCL1IO3n1zvbT1NOPMHj1pxVn4bCR3sbkQd0TpLaAdxXg0ZPdemF8DWJ4d3tEQ%3D%3D"
 
-方法:POST
 header "Content-Type: application/json"
 
 POST数据格式示例：
